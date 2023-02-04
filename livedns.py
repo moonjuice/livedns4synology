@@ -69,6 +69,8 @@ if __name__ == '__main__':
     try:
         set_gandi_ip(ip, domain, hostname)
         new_ip = get_gandi_ip(domain, hostname)
+        set_gandi_ip(ip, domain, '*')
+        new_ip = get_gandi_ip(domain, '*')
         print('good')
     except urllib.error.HTTPError as e:
         if e.code == 401:
